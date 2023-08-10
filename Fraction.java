@@ -8,8 +8,8 @@ public class Fraction {
     }
     public Fraction(int A , int B){
         if(B != 0) {
-            this.denominador = A;
-            this.numerador = B;
+            this.denominador = B;
+            this.numerador = A;
         }
         else
         {
@@ -33,7 +33,14 @@ public class Fraction {
         return this.denominador;
     }
 
-    private static int MCD(int a, int b) {
+
+    public void simplificar() {
+        int mcd = calcularMCD(numerador, denominador);
+        numerador /= mcd;
+        denominador /= mcd;
+    }
+
+    private static int calcularMCD(int a, int b) {
         while (b != 0) {
             int temp = b;
             b = a % b;
@@ -41,5 +48,7 @@ public class Fraction {
         }
         return a;
     }
+
+
 
 }
