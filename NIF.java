@@ -20,7 +20,7 @@ public class NIF {
         tablaLetra = new char[]{'Z', 'A', 'Q', 'W', 'S', 'X', 'E','D','C','R','F','V','T','G','B','N','H','Z', 'A', 'Q', 'W', 'S', 'X', 'E','D','C','R','F','V','T','G','B','N','H'};
         return tablaLetra[aux];
     }
-    
+
 
 
     public int getNumero() {
