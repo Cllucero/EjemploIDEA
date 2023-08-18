@@ -3,7 +3,7 @@
 // El atributo de la clase es un String que contiene la contraseña.
 
 public class Password {
-    private String clave= null;
+    private final String clave;
     private String nif;
 
     public Password(String nif, String pass){
@@ -18,7 +18,7 @@ public class Password {
     }
 
     public void setClave(String clave) {
-        this.clave = clave;
+        //this.clave = clave;
     }
 
     public String getNif() {

@@ -41,7 +41,7 @@ public class Empleado {
         this.dni = dni;
     }
 
-    public String getAplellido() {
+    public String getApellido() {
         return apellido;
     }
 
