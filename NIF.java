@@ -5,13 +5,18 @@ public class NIF {
 
     private int numero;
     private char letra;
+    private String nif;
 
 
     public  NIF (int numerox){
         numero=numerox;
         letra = letraNIF(numerox);
+        nif=letra+("" + numero);
     }
 
+    public NIF (String nifx){
+        this.nif=nifx;
+    }
 
 
     private char letraNIF(int numeroy){
@@ -21,12 +26,11 @@ public class NIF {
         return tablaLetra[aux];
     }
 
-
-
     public int getNumero() {
         return numero;
     }
-public void setNumero(int numero) {
+
+    public void setNumero(int numero) {
         this.numero = numero;
     }
 
@@ -36,6 +40,15 @@ public void setNumero(int numero) {
 
     public void setLetra(char letra) {
         this.letra = letra;
+    }
+
+
+    public String getNIF() {
+        return nif;
+    }
+
+    public void setNIF(String nif) {
+        this.nif = nif;
     }
 
     public static void main(String[] args) {

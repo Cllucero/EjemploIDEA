@@ -5,6 +5,8 @@ public class Empleado {
     private  String dni;
     private  String apellido;
     private  String sector;
+    private Persona personax;
+    private Password usuariox;
     /*
     private  int diaNac;
     private  int mesNac;
@@ -12,6 +14,15 @@ public class Empleado {
     */
     private static int numeroEmpleado = 0;
     private Fecha fecha;
+
+    public Empleado(String nombrex, String apellidox,String sectorx, String nifx, String pass){
+
+        this.sector=sectorx;
+        this.personax=new Persona(nombrex,apellidox,nifx);
+        this.usuariox= new Password(nifx,pass);
+    }
+
+
 
     public Empleado(String dni, String apellido, String sector, int diaNac, int mesNac, int anioNac) {
         this.dni = dni;
