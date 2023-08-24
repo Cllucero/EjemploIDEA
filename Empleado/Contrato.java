@@ -1,9 +1,11 @@
-/*
+package Empleado;/*
 Ejercicios Herencia entre clases
 
 1. Crear una jerarquia de clases.
 
  */
+
+import Empleado.Empleado;
 
 public class Contrato extends Empleado {
     private String numeroContrato ;

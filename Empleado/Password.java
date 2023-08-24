@@ -1,5 +1,5 @@
-
-//9. Crea una clase Password.
+package Empleado;
+//9. Crea una clase Empleado.Empleado.Password.
 // El atributo de la clase es un String que contiene la contraseña.
 
 public class Password {

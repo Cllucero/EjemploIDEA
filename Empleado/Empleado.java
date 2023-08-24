@@ -1,4 +1,4 @@
-//7. Crea una clase Empleado. La clase contendrá un atributo estático o atributo de clase.
+package Empleado;//7. Crea una clase Empleado.Empleado. La clase contendrá un atributo estático o atributo de clase.
 
 
 public class Empleado {

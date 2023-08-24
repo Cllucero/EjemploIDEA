@@ -1,6 +1,8 @@
+package Empleado;
+
 /*
-1. Crea una clase Persona.
-La clase contendrá un atributo fechaNacimiento que será un objeto de la clase Fecha creada en el ejercicio 6 anterior.
+1. Crea una clase Empleado.Empleado.Persona.
+La clase contendrá un atributo fechaNacimiento que será un objeto de la clase Empleado.Empleado.Fecha creada en el ejercicio 6 anterior.
  */
 public class Persona {
     private String nombres;

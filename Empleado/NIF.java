@@ -1,5 +1,5 @@
-//Crea una clase NIF. Los atributos serán el número de DNI y la letra.
-// La clase contendrá un método privado que calcule la letra del NIF a partir del número de DNI
+package Empleado;//Crea una clase Empleado.Empleado.NIF. Los atributos serán el número de DNI y la letra.
+// La clase contendrá un método privado que calcule la letra del Empleado.Empleado.NIF a partir del número de DNI
 
 public class NIF {
 
@@ -53,7 +53,7 @@ public class NIF {
 
     public static void main(String[] args) {
         NIF nif = new NIF(30988055);
-        System.out.println("NIF: " + nif.getLetra()+nif.getNumero());
+        System.out.println("Empleado.Empleado.NIF: " + nif.getLetra()+nif.getNumero());
     }
 
 
