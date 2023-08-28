@@ -51,10 +51,7 @@ public class NIF {
         this.nif = nif;
     }
 
-    public static void main(String[] args) {
-        NIF nif = new NIF(30988055);
-        System.out.println("Empleado.Empleado.NIF: " + nif.getLetra()+nif.getNumero());
-    }
+
 
 
 }
