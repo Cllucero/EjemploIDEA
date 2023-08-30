@@ -4,32 +4,29 @@ import java.time.LocalDate;
 
 public class Formador extends Persona {
 
-    private String idFormador="00";
-    private String numeroUEFA="00";
+   private String numeroCarnetUEFA;
+   private int movilContactoUnico;
 
-    public Formador(String primerNombre, String segundoNombre, String primerApellido, String segundoApellido, String dni, String alias, int diax, int mesx, int aniox,String numeroUEFA) {
-
-        super(primerNombre, segundoNombre, primerApellido, segundoApellido, dni, alias, LocalDate.of(aniox,mesx,diax));
-        this.numeroUEFA = numeroUEFA;
-    }
-
-    public Formador(String primerNombre, String segundoNombre, String primerApellido, String segundoApellido, String dni, String alias, LocalDate fechaNacimiento) {
-   super(primerNombre, segundoNombre, primerApellido, segundoApellido, dni, alias, fechaNacimiento);
+   public Formador(String nombresx, String apellidosx, String dnix, int diaNac, int mesNac, int anioNac, String nCarnetUEFA,int movilCU){
+       super( nombresx, apellidosx, dnix, diaNac, mesNac, anioNac);
+       this.numeroCarnetUEFA=nCarnetUEFA;
+       this.movilContactoUnico=movilCU;
    }
 
-    public String getIdFormador() {
-        return idFormador;
+
+    public String getNumeroCarnetUEFA() {
+        return numeroCarnetUEFA;
     }
 
-    public void setIdFormador(String idFormador) {
-        this.idFormador = idFormador;
+    public void setNumeroCarnetUEFA(String numeroCarnetUEFA) {
+        this.numeroCarnetUEFA = numeroCarnetUEFA;
     }
 
-    public String getNumeroUEFA() {
-        return numeroUEFA;
+    public int getMovilContactoUnico() {
+        return movilContactoUnico;
     }
 
-    public void setNumeroUEFA(String numeroUEFA) {
-        this.numeroUEFA = numeroUEFA;
+    public void setMovilContactoUnico(int movilContactoUnico) {
+        this.movilContactoUnico = movilContactoUnico;
     }
 }

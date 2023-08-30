@@ -36,45 +36,51 @@ package ClubSistemaDeAsistencia;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-public class Main {
 
-    public static void main(String[] args) {
-        // Crear un formador
-        Formador formador = new Formador("Juan", null, "Perez", null, "12345678", "jperez", 19,05, 1984, "UEFA123");
+    public class Main {
 
-        // Crear 5 jugadores
-        Jugador jugador1 = new Jugador("Ana", null, "Garcia", null, "11111111", "agarcia", LocalDate.of(2000, 3, 20), "Ninguna", "Ninguna", "Ninguna");
-        Jugador jugador2 = new Jugador("Luis", null, "Lopez", null, "22222222", "llopez", LocalDate.of(2001, 7, 10), "Alergias", "MedicamentoX", "Ninguna");
-        Jugador jugador3 = new Jugador("Maria", null, "Martinez", null, "33333333", "mmartinez", LocalDate.of(2002, 1, 5), "Asma", "InhaladorY", "Ninguna");
-        Jugador jugador4 = new Jugador("Pedro", null, "Sanchez", null, "44444444", "psanchez", LocalDate.of(2003, 9, 8), "Ninguna", "Ninguna", "AlergiaGrave");
-        Jugador jugador5 = new Jugador("Laura", null, "Ramirez", null, "55555555", "lramirez", LocalDate.of(2004, 12, 18), "Ninguna", "Ninguna", "Ninguna");
+        public static void main(String[] args) {
+            // Crear jugadores
+            Jugador jugador1 = new Jugador("Ana", "Garcia", "11111111", 1, 1, 2000, "AnaG", "Juan Perez", "123456789");
+            Jugador jugador2 = new Jugador("Luis", "Lopez", "22222222", 2, 2, 2001, "LuisL", "Maria Martinez", "987654321");
 
-        // Agregar los jugadores al equipo de la categoría
-        Categoria categoria = new Categoria("Sub-17", "Categoría para menores de 17 años");
-        categoria.agregarJugador(jugador1);
-        categoria.agregarJugador(jugador2);
-        categoria.agregarJugador(jugador3);
-        categoria.agregarJugador(jugador4);
-        categoria.agregarJugador(jugador5);
+            // Crear formador
+            Formador formador1 = new Formador("Carlos", "Martinez", "33333333", 3, 3, 1985, "FORM123", 55555555);
 
-        // Agregar el formador a la categoría
-        categoria.setFormador(formador);
+            // Crear categoría
+            Categoria categoria = new Categoria("Sub-17", 2);
+            categoria.setEquipo(jugador1);
+            categoria.setEquipo(jugador2);
+            categoria.setCuerpoTecnico(formador1);
 
-        // Registrar 10 asistencias para el jugador1
-        for (int i = 0; i < 10; i++) {
-            jugador1.agregarAsistencia(20, 5);
-        }
+            // Agregar asistencias a los jugadores
+            jugador1.agregarPresente(8, 5);
+            jugador1.agregarPresente(7, 6);
+            jugador2.agregarPresente(6, 4);
+            jugador2.agregarPresente(5, 5);
 
-        // Mostrar información
-        System.out.println("Equipo de la categoría: " + categoria.getNombreCategoria());
-        System.out.println("Formador: " + formador.getPrimerNombre() + " " + formador.getPrimerApellido());
-        System.out.println("Jugadores:");
-        for (Persona jugador : categoria.getEquipo()) {
-            System.out.println("- " + jugador.getPrimerNombre() + " " + jugador.getPrimerApellido());
-        }
-        System.out.println("Asistencias de " + jugador1.getPrimerNombre() + ":");
-        for (Asistencia asistencia : jugador1.getAsistencias()) {
-            System.out.println("- Fecha: " + asistencia.getFechaAsist() + ", Clima: " + asistencia.getClimaJugadorInicio() + ", Carga Borg: " + asistencia.getCargaBorgEstimada());
+            // Calcular el clima promedio de los jugadores
+            double climaPromedio = (jugador1.calcularClima() + jugador2.calcularClima()) / 2;
+
+            // Mostrar información
+            System.out.println("Categoría: " + categoria.getNombreEquipo());
+            System.out.println("Cantidad de jugadores: " + categoria.getCantidadDeJugadores());
+            System.out.println("Equipo:");
+            for (Jugador jugador : categoria.getEquipo()) {
+                System.out.println("Nombre: " + jugador.getNombres() + " " + jugador.getApellidos());
+                System.out.println("Apodo: " + jugador.getApodo());
+            }
+            System.out.println("Cuerpo Técnico:");
+            for (Formador formador : categoria.getCuerpoTecnico()) {
+                System.out.println("Nombre: " + formador.getNombres() + " " + formador.getApellidos());
+                System.out.println("Carnet UEFA: " + formador.getNumeroCarnetUEFA());
+            }
+            System.out.println("Clima promedio: " + climaPromedio);
         }
     }
-}
+
+
+
+
+
+

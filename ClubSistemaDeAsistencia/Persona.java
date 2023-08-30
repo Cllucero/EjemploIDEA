@@ -5,78 +5,33 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 public class Persona {
 
-
-    private String idPersona;
-    private LocalDate fechaAlta;
-    private String primerNombre;
-    private String segundoNombre;
-    private String primerApellido;
-    private String segundoApellido;
+    private String nombres;
+    private String apellidos;
     private String dni;
-    private String alias;
     private LocalDate fechaNacimiento;
 
-    public Persona(String primerNombre, String segundoNombre, String primerApellido, String segundoApellido, String dni, String alias, LocalDate fechaNacimiento) {
-        this.primerNombre = primerNombre;
-        this.segundoNombre = segundoNombre;
-        this.primerApellido = primerApellido;
-        this.segundoApellido = segundoApellido;
-        this.dni = dni;
-        this.alias = alias;
-        this.fechaNacimiento = fechaNacimiento;
-        this.fechaAlta= LocalDate.now();
-        this.idPersona= dni;
+    public Persona (String nombresx, String apellidosx, String dnix, int diaNac, int mesNac, int anioNac){
+        this.nombres=nombresx;
+        this.apellidos= apellidosx;
+        this.dni=dnix;
+        this.fechaNacimiento= LocalDate.of(anioNac,mesNac,diaNac);
     }
 
 
-
-
-    public String getIdPersona() {
-        return idPersona;
+    public String getNombres() {
+        return nombres;
     }
 
-    public void setIdPersona(String idPersona) {
-        this.idPersona = idPersona;
+    public void setNombres(String nombres) {
+        this.nombres = nombres;
     }
 
-    public LocalDate getFechaAlta() {
-        return fechaAlta;
+    public String getApellidos() {
+        return apellidos;
     }
 
-    public void setFechaAlta(LocalDate fechaAlta) {
-        this.fechaAlta = fechaAlta;
-    }
-
-    public String getPrimerNombre() {
-        return primerNombre;
-    }
-
-    public void setPrimerNombre(String primerNombre) {
-        this.primerNombre = primerNombre;
-    }
-
-    public String getSegundoNombre() {
-        return segundoNombre;
-    }
-
-    public void setSegundoNombre(String segundoNombre) {
-        this.segundoNombre = segundoNombre;
-    }
-
-    public String getPrimerApellido() {
-        return primerApellido;
-    }
-
-    public void setPrimerApellido(String primerApellido) {
-        this.primerApellido = primerApellido;
-    }
-
-    public String getSegundoApellido() {
-        return segundoApellido;
-    }
-
-    public void setSegundoApellido(String segundoApellido) {
-        this.segundoApellido = segundoApellido;
+    public void setApellidos(String apellidos) {
+        this.apellidos = apellidos;
     }
 
     public String getDni() {
@@ -85,14 +40,6 @@ public class Persona {
 
     public void setDni(String dni) {
         this.dni = dni;
-    }
-
-    public String getAlias() {
-        return alias;
-    }
-
-    public void setAlias(String alias) {
-        this.alias = alias;
     }
 
     public LocalDate getFechaNacimiento() {

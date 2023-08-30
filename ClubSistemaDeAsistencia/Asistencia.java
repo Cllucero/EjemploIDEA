@@ -4,33 +4,27 @@ package ClubSistemaDeAsistencia;
 import java.time.LocalDate;
 
 public class Asistencia {
-    private String idCodAsistencia;
+
     private LocalDate fechaAsist;
     private int climaJugadorInicio;
     private int cargaBorgEstimada;
 
 
-    public Asistencia( int climaJugadorInicio, int cargaBorgEstimada) {
+    public Asistencia( int climaJugadorIniciox, int cargaBorgEstimadax) {
         this.fechaAsist = LocalDate.now();
-        this.climaJugadorInicio = climaJugadorInicio;
-        this.cargaBorgEstimada = cargaBorgEstimada;
-        this.idCodAsistencia=LocalDate.now().toString();
+        this.climaJugadorInicio = climaJugadorIniciox;
+        this.cargaBorgEstimada = cargaBorgEstimadax;
+
     }
 
-    public String getIdCodAsistencia() {
-        return idCodAsistencia;
-    }
-
-    public void setIdCodAsistencia(String idCodAsistencia) {
-        this.idCodAsistencia = idCodAsistencia;
-    }
 
     public LocalDate getFechaAsist() {
         return fechaAsist;
     }
 
-    public void setFechaAsist(LocalDate fechaAsist) {
-        this.fechaAsist = fechaAsist;
+    public void setFechaAsist(int diax, int mesx, int aniox) {
+
+        this.fechaAsist = LocalDate.of(aniox,mesx,diax);
     }
 
     public int getClimaJugadorInicio() {
@@ -48,4 +42,8 @@ public class Asistencia {
     public void setCargaBorgEstimada(int cargaBorgEstimada) {
         this.cargaBorgEstimada = cargaBorgEstimada;
     }
+
+
+
 }
+
