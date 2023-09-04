@@ -35,49 +35,44 @@ Cada clase `Persona`, `Formador`, `Categoria`, `Jugador` y `ResponsableMenor` ti
 package ClubSistemaDeAsistencia;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Objects;
+import java.time.LocalDate;
+import java.util.ArrayList;
 
+public class Main {
+    public static void main(String[] args) {
 
-    public class Main {
+        // Crea un ArrayList de jugadores
+        ArrayList<Jugador> jugadores = new ArrayList<>();
 
-        public static void main(String[] args) {
-            // Crear jugadores
-            Jugador jugador1 = new Jugador("Ana", "Garcia", "11111111", 1, 1, 2000, "AnaG", "Juan Perez", "123456789");
-            Jugador jugador2 = new Jugador("Luis", "Lopez", "22222222", 2, 2, 2001, "LuisL", "Maria Martinez", "987654321");
-
-            // Crear formador
-            Formador formador1 = new Formador("Carlos", "Martinez", "33333333", 3, 3, 1985, "FORM123", 55555555);
-
-            // Crear categoría
-            Categoria categoria = new Categoria("Sub-17", 2);
-            categoria.setEquipo(jugador1);
-            categoria.setEquipo(jugador2);
-            categoria.setCuerpoTecnico(formador1);
-
-            // Agregar asistencias a los jugadores
-            jugador1.agregarPresente(8, 5);
-            jugador1.agregarPresente(7, 6);
-            jugador2.agregarPresente(6, 4);
-            jugador2.agregarPresente(5, 5);
-
-            // Calcular el clima promedio de los jugadores
-            double climaPromedio = (jugador1.calcularClima() + jugador2.calcularClima()) / 2;
-
-            // Mostrar información
-            System.out.println("Categoría: " + categoria.getNombreEquipo());
-            System.out.println("Cantidad de jugadores: " + categoria.getCantidadDeJugadores());
-            System.out.println("Equipo:");
-            for (Jugador jugador : categoria.getEquipo()) {
-                System.out.println("Nombre: " + jugador.getNombres() + " " + jugador.getApellidos());
-                System.out.println("Apodo: " + jugador.getApodo());
-            }
-            System.out.println("Cuerpo Técnico:");
-            for (Formador formador : categoria.getCuerpoTecnico()) {
-                System.out.println("Nombre: " + formador.getNombres() + " " + formador.getApellidos());
-                System.out.println("Carnet UEFA: " + formador.getNumeroCarnetUEFA());
-            }
-            System.out.println("Clima promedio: " + climaPromedio);
+        // Crea 10 jugadores
+        for (int i = 1; i <= 10; i++) {
+            Jugador jugador = new Jugador("Jugador " + i, "Pérez", "12345678A", 1, 1, 1, "Juanito", "Juan Pérez", "666666666");
+            jugadores.add(jugador);
         }
+
+        // Agrega asistencias a los jugadores
+        for (Jugador jugador : jugadores) {
+            int numeroAsistencias = (int) (Math.random() * 10);
+            for (int j = 1; j <= numeroAsistencias; j++) {
+                int borg = (int) (Math.random() * 10);
+                int climaJugador = (int) (Math.random() * 10);
+                jugador.agregarPresente(borg, climaJugador);
+            }
+        }
+
+        // Calcula la asistencia promedio para cada jugador
+        for (Jugador jugador : jugadores) {
+            double asistenciaPromedio = jugador.calcularAsistencia();
+            System.out.println("La asistencia promedio del jugador " + jugador.getNombres() + " es " + asistenciaPromedio);
+        }
+
     }
+
+}
+
+
+
 
 
 

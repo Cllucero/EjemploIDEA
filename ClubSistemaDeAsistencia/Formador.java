@@ -2,7 +2,7 @@ package ClubSistemaDeAsistencia;
 
 import java.time.LocalDate;
 
-public class Formador extends Persona {
+public class Formador extends Persona implements Clima{
 
    private String numeroCarnetUEFA;
    private int movilContactoUnico;
@@ -13,6 +13,19 @@ public class Formador extends Persona {
        this.movilContactoUnico=movilCU;
    }
 
+    @Override
+    public double calcularClima() {
+        return calcularPromedioClimaDesdePersona();
+    }
+
+    @Override
+    public double calcularBorg() {
+        return calcularPromedioBorgDesdePersona();
+    }
+
+    public double calcularAsistencia(){
+        return this.cantidadAsistenciaDesdePersona();
+    }
 
     public String getNumeroCarnetUEFA() {
         return numeroCarnetUEFA;

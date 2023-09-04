@@ -9,33 +9,31 @@ public class Jugador extends Persona implements Clima {
     private String apodo;
     private String nombreCompletoResponsable;
     private String movilContactoUnicoResponsable;
-    private ArrayList<Asistencia> presentes;
+    //private ArrayList<Asistencia> presentes;
 
 public Jugador (String nombresx, String apellidosx, String dnix, int diaNacx, int mesNacx, int anioNacx, String apodox, String nombreCompletoResponsablex, String movilContactoUnicoResponsablex){
     super( nombresx, apellidosx,  dnix, diaNacx , mesNacx , anioNacx);
     this.apodo=apodox;
     this.nombreCompletoResponsable=nombreCompletoResponsablex;
     this.movilContactoUnicoResponsable=movilContactoUnicoResponsablex;
-    this.presentes= new ArrayList<>();
+    //this.presentes= new ArrayList<>();
 
     }
 
-    public void agregarPresente (int climaJugadorIniciox, int cargaBorgEstimadax){
-        this.presentes.add(new Asistencia(climaJugadorIniciox,cargaBorgEstimadax));
-    }
+
 
     @Override
     public double calcularClima() {
-        int aux=0;
-        for(int i =0; i<presentes.size(); i++){
-
-        aux = presentes.get(i).getClimaJugadorInicio()+ aux;
-
-        }
-
-        return aux/presentes.size();
+        return this.calcularPromedioClimaDesdePersona();
+    }
+    @Override
+    public double calcularBorg() {
+        return this.calcularPromedioBorgDesdePersona();
     }
 
+    public double calcularAsistencia(){
+    return this.cantidadAsistenciaDesdePersona();
+    }
 
     public String getApodo() {
         return apodo;
