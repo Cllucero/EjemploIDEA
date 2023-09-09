@@ -1,4 +1,4 @@
-package PracticasCursoUdemi.Matematica;
+package PracticasCursoUdemi.Matematicas;
 
 public class Factorial {
 
